@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+<body>
+  <article class="bg-black">
+    <div>
+      <!-- Incluindo o menu -->
+      {% include 'menu.html' %}
+    </div>
+
+    <form>
+      <div>
+        <label name="name">Nome da Missão:</label>
+        <input type="text" for="name" /> 
+      </div>
+      <div>
+        <label  name="data_lancamento">Data de Lançamento:</label>
+        <input type="date" for="data_lancamento" /> 
+      </div>
+      <div>
+        <label  name="destino">Destino:</label>
+        <input type="text" for="destino" /> 
+      </div>
+      <div>
+        <labelname="estado">Estado da Missão:</label>
+        <input type="text" for="estado" /> 
+      </div>
+      <div>
+        <label  name="tripulacao">Tripulação:</label>
+        <input type="text" for="tripulacao" /> 
+      </div>
+      <div>
+        <label  name="carga_util">Carga Útil:</label>
+        <input type="text" for="carga_util" /> 
+      </div>
+      <div>
+        <label name="duracao">Duração da Missão:</label>
+        <input type="text" for="duracao" /> 
+      </div>
+      <div>
+        <label name="custo">Custo da Missão:</label>
+        <input type="text" for="custo" /> 
+      </div>
+      <div>
+        <label name="status">Status da Missão:</label>
+        <input type="text" for="status" /> 
+      </div>
+    </form>
+  </section>
+</body>
+</html>

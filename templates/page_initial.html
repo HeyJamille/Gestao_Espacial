@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página Inicial</title>
+  <link href="{{url_for('static',filename='css/page_initial.css')}}" rel="stylesheet">
+  <!--<link href="{{ url_for('static', filename='fontawesome-free/css/all.min.css') }}" rel="stylesheet"> -->
+</head>
+
+<body>
+  <main class="main_page_initial">
+    <article> 
+      <section class="hamburguer" id="hamburger">
+        &#9776; <!-- Unicode character for hamburger icon -->
+      </section>
+
+      <section class="menu">
+        <!-- Incluindo o menu --> 
+        {% include 'menu.html' %}
+      </section> 
+    </article>
+
+    <article class="paragraph">
+      <h1>Junte-se à Jornada!</h1>
+      <p>
+        Prepare-se para embarcar em uma jornada emocionante de descoberta e exploração. 
+        O espaço está chamando! Você está pronto para atender ao chamado?
+      </p>
+    </article>
+  </main>
+</body>
+</html>

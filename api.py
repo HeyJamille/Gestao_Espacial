@@ -1,7 +1,12 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template, url_for #Blueprint
 import data_model
 
+#pp = Blueprint('api', __name__)
 app = Flask(__name__)
+
+@app.route('/')
+def index():
+  return render_template('page_initial.html')
 
 # Rota para selecionar as missões dentro de um intervalo de datas
 @app.route('/missao/<data_inicial>/<aula_final>', methods=['GET']) 
@@ -14,7 +19,7 @@ def get_all():
   return jsonify(data_model.get_all())
 
 # Rota para adicionar uma missão 
-@app.route('/missao/add', methods=['POST'])
+@app.route('/missao/add')
 def add_missao():
   try:
     data_lancamento = request.get_json() 
@@ -22,7 +27,9 @@ def add_missao():
     print("Success")
     return jsonify(response)
   except Exception as e:
-    return jsonify({'error': str(e)})
+    return jsonify({'error': str(e)}) 
+  finally:
+    return render_template('criar_missao.html')
 
 # Rota para atualizar uma missão
 @app.route('/missao/update', methods=['PUT'])
@@ -40,4 +47,4 @@ def delete_missao(id):
     return jsonify({'error': str(e)})
   
 if __name__ == '__main__':
-  app.run()
+  app.run(debug=True)
