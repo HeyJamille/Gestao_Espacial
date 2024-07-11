@@ -6,6 +6,7 @@
 - CSS
 - JavaScript
 - Flask
+- SQL
 - Postman
 
 ### Sistema disponível em:
